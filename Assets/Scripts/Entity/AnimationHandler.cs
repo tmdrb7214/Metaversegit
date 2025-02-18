@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     private static readonly int isMoving = Animator.StringToHash("IsMove");
-    private static readonly int isLooking = Animator.StringToHash("Jump");
+    private static readonly int isJumping = Animator.StringToHash("Jump");
 
     protected Animator animator;
 
@@ -19,5 +19,8 @@ public class AnimationHandler : MonoBehaviour
         animator.SetBool(isMoving, obj.magnitude >.5f);
     }
 
-
+    public void Jump()
+    {
+        animator.SetBool(isJumping,true);
+    }
 }

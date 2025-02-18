@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerController : BaseController
 {
     private Camera camera;
-
+    public float jumpForce = 7f;
+    private bool isGrounded;
+    private Transform playertransform;
     protected override void Start()
     {
         base.Start();
         camera = Camera.main;
+        playertransform = transform;
     }
 
     protected override void HandleAction()
@@ -18,17 +21,18 @@ public class PlayerController : BaseController
         float vertical = Input.GetAxis("Vertical");
         movementDirection = new Vector2(horizontal, vertical).normalized;
 
-        Vector2 mousePosition = Input.mousePosition;
-        Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
-        lookDirection = (worldPos - (Vector2)transform.position);
+        if(movementDirection.x > 0.5f)
+        {
+            playertransform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (movementDirection.x < 0.5f)
+        {
+            playertransform.localScale = new Vector3(-1, 1, 1);
+        }
 
-        if(lookDirection.magnitude < 0.9f)
+        if (Input.GetKeyDown(KeyCode.Space) )
         {
-            lookDirection = Vector2.zero;
-        }   
-        else
-        {
-            lookDirection = lookDirection.normalized;
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
         }
     }
 

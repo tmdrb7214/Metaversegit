@@ -62,6 +62,10 @@ public class BaseController : MonoBehaviour
         _rigidbody.velocity = direction;
         animationHandler.Move(direction);
     }
+    private void Jumping(Vector2 direction)
+    {
+        animationHandler.Jump();
+    }
 
     private void Rotate(Vector2 direction)
     {
