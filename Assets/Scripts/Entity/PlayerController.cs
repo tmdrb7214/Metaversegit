@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : BaseController
 {
     private Camera camera;
-    public float jumpForce = 7f;
+    public float jumpForce = 2f;
     private bool isGrounded;
     private Transform playertransform;
-    
+    public LayerMask groundLayer;
     protected override void Start()
     {
         base.Start();
@@ -37,6 +37,7 @@ public class PlayerController : BaseController
         if (Input.GetKeyDown(KeyCode.Space) )
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
+            isGrounded = false;
         }
     }
     private void FixedUpdate()
@@ -47,21 +48,15 @@ public class PlayerController : BaseController
         }
         else
         {
-            _rigidbody.velocity += Vector2.down * 0.5f;
+            _rigidbody.velocity += Vector2.down * 10f *Time.deltaTime;
         }
     }
 
     private void CheckGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f);
-        if (hit.collider != null && hit.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f , groundLayer);
+        isGrounded = hit.collider != null;
+
     }
 
 }
