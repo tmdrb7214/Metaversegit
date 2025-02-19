@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Ememy : MonoBehaviour
 {
-    public GameObject EmemyImage;
     public GameObject Die;
-
+    public GameObject Life;
     public RectTransform front;
     float full = 5.0f;
     float energy = 0.0f;
@@ -15,7 +14,7 @@ public class Ememy : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         float y = Random.Range(-3.0f, 3.0f);
-        float x = 10.0f;
+        float x = 13.0f;
         transform.position = new Vector2(x, y);
     }
 
@@ -24,7 +23,7 @@ public class Ememy : MonoBehaviour
     {
         if (energy < full)
         {
-            transform.position += Vector3.left * 0.08f;
+            transform.position += Vector3.left * 0.05f;
         }
         else
         {
@@ -50,15 +49,17 @@ public class Ememy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             
-            if (energy >= full)
+            if (energy < full)
             {
                 energy += 1.0f;
                 front.localScale = new Vector3(energy / full, 1.0f, 1.0f);
                 Destroy(collision.gameObject);
-                if(energy == 5.0f)
+                if(energy >= full)
                 {
-                    EmemyImage.SetActive(false);
+                    Destroy(gameObject, 1.5f);
                     Die.SetActive(true);
+                    Life.SetActive(false);
+
                 }
             }
             

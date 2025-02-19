@@ -9,7 +9,7 @@ public class FlapPlayer : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("MakeBullet", 0, 0.5f);// 볼랫을 시작하자마자 0.3초마다 생성
+        InvokeRepeating("MakeBullet", 0, 0.2f);// 볼랫을 시작하자마자 0.2초마다 생성
     }
 
     private void Update()

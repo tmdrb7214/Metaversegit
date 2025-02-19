@@ -31,7 +31,6 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7409613733698957299}
   - {fileID: 3328783692850477753}
   m_Father: {fileID: 5484169422599952231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,6 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7409613733698957299}
   - {fileID: 4797741378723188487}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8fdedc0343d80c4b9223e7f24564d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EmemyImage: {fileID: 4657593928962339293}
   Die: {fileID: 7429639664857181831}
+  Life: {fileID: 4657593928962339293}
   front: {fileID: 8818215388896607085}
 --- !u!95 &6920798784170474840
 Animator:
@@ -530,12 +530,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7429639664857181831}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4797741378723188487}
+  m_Father: {fileID: 5484169422599952231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7733605028621849079
 SpriteRenderer:
