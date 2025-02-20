@@ -9,10 +9,6 @@ public class SceneLoad : MonoBehaviour
     public string Flap;
     private bool isPlayerNear = false;
 
-    void Start()
-    {
-        
-    }
 
    
     void Update()

@@ -9,7 +9,7 @@ public class Ememy : MonoBehaviour
     public RectTransform front;
     float full = 5.0f;
     float energy = 0.0f;
-    // Start is called before the first frame update
+   
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -59,12 +59,9 @@ public class Ememy : MonoBehaviour
                     Destroy(gameObject, 1.5f);
                     Die.SetActive(true);
                     Life.SetActive(false);
-
+                    GameManager.instance.AddScore();
                 }
             }
-            
         }
-       
-        
     }
 }

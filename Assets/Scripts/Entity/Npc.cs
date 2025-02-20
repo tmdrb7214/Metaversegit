@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Npc : MonoBehaviour
@@ -13,13 +14,7 @@ public class Npc : MonoBehaviour
     private bool isPlayerNear = false;
     private bool isDialogueActive = false;
     private int dialogueState = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if(isPlayerNear && Input.GetKeyDown(KeyCode.E))
@@ -66,6 +61,7 @@ public class Npc : MonoBehaviour
             case 1:
                 dialogueText.text = "게임을 시작합니다.";
                 dialogueState = 1;
+                SceneManager.LoadScene("Flap");
                 break;
             case 2:
                 dialogueText.text = "아무것도 하지 않습니다.";

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class FlapPlayer : MonoBehaviour
 {
     public GameObject Bullet;
-
-
+    
     void Start()
     {
         InvokeRepeating("MakeBullet", 0, 0.2f);// 볼랫을 시작하자마자 0.2초마다 생성
@@ -29,7 +31,7 @@ public class FlapPlayer : MonoBehaviour
 
     void MakeBullet()
     {
-        float x = transform.position.x;
+        float x = transform.position.x + 0.5f;
         float y = transform.position.y;
         Instantiate(Bullet, new Vector2(x,y),Quaternion.identity);
     }

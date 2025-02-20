@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 6920798784170474840}
   m_Layer: 0
   m_Name: Eagle
-  m_TagString: Untagged
+  m_TagString: Ememy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
