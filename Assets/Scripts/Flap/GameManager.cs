@@ -35,7 +35,9 @@ public class GameManager : MonoBehaviour
     }   
     void Start()
     {
-        InvokeRepeating("MakeEmemy", 0.5f, 2.0f);
+        Time.timeScale = 1; 
+                 //0.5초 후에 1.5초마다 적을생성
+        InvokeRepeating("MakeEmemy", 0.5f, 1.5f);
     }
 
     // Update is called once per frame
