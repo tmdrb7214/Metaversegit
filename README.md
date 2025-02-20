@@ -30,7 +30,10 @@ wasd , 방향키로 이동이가능하고 점프가가능
 Time.timeScale =1 ;  타임스케일을 씬시작시에 1로 넣어 해결되었다 .
 
 플레이어가 collider 충돌도 무시하고 멈추지않고 튕겨져나가는 현상이 발생했다 .
+
 ![Image](https://github.com/user-attachments/assets/689a66fb-2a90-4a95-8c94-d8bcac309fa9)
+
+
 이렇게 메인카메라 안에 플레이어가 들어가서 발생하는 현상이였다 .
 플레이어를 밖으로 빼주니 바로 수정되었다 .
 
